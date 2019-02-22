@@ -18,10 +18,11 @@ Route::get('/', function () {
 // Route::resource('/Teams/', 'TeamController');
 // Route::resource('/Players/', 'PlayerController');
 
-Route::get('Teams/', 'TeamController@index')->name('allTeams');
 Route::get('Teams/{id}', 'TeamController@show');
-Route::get('Players', 'PlayerController@index');
+Route::get('Teams/', 'TeamController@index')->name('allTeams');
+
 Route::get('Players/{id}', 'PlayerController@show');
+Route::get('Players', 'PlayerController@index');
 
 Route::get('/register', 'RegisterController@create')->name('register');
 Route::post('/register', 'RegisterController@store');

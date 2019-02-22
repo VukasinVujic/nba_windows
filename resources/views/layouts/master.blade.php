@@ -11,7 +11,9 @@
 
     @include('partials.navbar')
     @include('partials.header')
+    <div class="container"> </div>
     @yield('content')
+    @include('partials.sidebar')
     @include('partials.footer')
     
 </body>
