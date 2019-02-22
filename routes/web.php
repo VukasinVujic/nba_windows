@@ -18,7 +18,7 @@ Route::get('/', function () {
 // Route::resource('/Teams/', 'TeamController');
 // Route::resource('/Players/', 'PlayerController');
 
-Route::get('Teams/{id}', 'TeamController@show');
+Route::get('Teams/{id}', 'TeamController@show')->name('showTeam');
 Route::get('Teams/', 'TeamController@index')->name('allTeams');
 
 Route::get('Players/{id}', 'PlayerController@show');
@@ -36,7 +36,7 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 // });
 
 
-Route::groupe(['middleware'=>['guest']] , function(){
+Route::group(['middleware'=>['guest']] , function(){
 
     Route::get('/register', 'RegisterController@create')->name('register');
     Route::post('/register', 'RegisterController@store');
