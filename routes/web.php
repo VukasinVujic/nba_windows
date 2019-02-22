@@ -24,13 +24,9 @@ Route::get('Teams/', 'TeamController@index')->name('allTeams');
 Route::get('Players/{id}', 'PlayerController@show');
 Route::get('Players', 'PlayerController@index');
 
-Route::get('/register', 'RegisterController@create')->name('register');
-Route::post('/register', 'RegisterController@store');
 
 Route::get('/logout', 'LoginController@logout')->name('logout');
 
-Route::get('/login', 'LoginController@create')->name('show-login');
-Route::post('/login', 'LoginController@store')->name('login');
 
 // Route::group(['middleware' => ['guest']], function (){
 
@@ -40,3 +36,11 @@ Route::post('/login', 'LoginController@store')->name('login');
 // });
 
 
+Route::groupe(['middleware'=>['guest']] , function(){
+
+    Route::get('/register', 'RegisterController@create')->name('register');
+    Route::post('/register', 'RegisterController@store');
+
+    Route::get('/login', 'LoginController@create')->name('show-login');
+    Route::post('/login', 'LoginController@store')->name('login');
+});
