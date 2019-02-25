@@ -18,6 +18,8 @@ Route::get('/', function () {
 // Route::resource('/Teams/', 'TeamController');
 // Route::resource('/Players/', 'PlayerController');
 
+Route::get('/verification/{id}' , 'LoginController@verification')->name('verification');
+
 
 
 Route::get('/logout', 'LoginController@logout')->name('logout');
@@ -51,5 +53,4 @@ Route::get('Players', 'PlayerController@index');
 
 });
 
-
-
+            

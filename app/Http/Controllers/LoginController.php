@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+
 class LoginController extends Controller
 {
     public function logout(){
@@ -12,8 +14,10 @@ class LoginController extends Controller
     }
 
     public function create(){
+
         return view('auth.login');
     }
+    
 
     public function store(Request $request){
 
@@ -27,7 +31,24 @@ class LoginController extends Controller
             return back()->withErrors([
                 'message' => 'Wrong login intake'
             ]);
+        } else {
+            if(auth()->user()->is_verified){
+                return redirect()->route('allTeams');
+            } else {
+                $this->destroy();
+                return back()->withErrors([
+                    'message'=> 'you are not verified, check your mail for verification'
+                ]);
+            }
         } 
-        return redirect()->route('allTeams');
+    }
+
+    public function verification($id){
+
+        $user = User::find($id);
+        
+        $user->is_verified=true;
+        $user->save();
+        return view('auth.verification',compact('user'));
     }
 }
