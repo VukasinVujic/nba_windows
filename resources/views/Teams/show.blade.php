@@ -25,7 +25,7 @@
 @foreach ($team->comments as $comment)
 
 <div class="p-4 alert-success">   
-    <div class="text-muted"> {{ $comment->create_at }}</div>
+    <div class="text-muted"> {{ $comment->created_at }}</div>
     <strong>{{ 'Author: '. $comment->user->name }}</strong>
     <br>
     {{ 'Comment: '. $comment->content }}
