@@ -8,7 +8,7 @@ class LoginController extends Controller
 {
     public function logout(){
         auth()->logout();
-        return redirect()->route('logout');
+        return redirect()->route('home');
     }
 
     public function create(){
@@ -23,7 +23,7 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if(!auth()->attempt($request->only('email','password'))){
+        if(!auth()->attempt($request->only(['email','password']))){
             return back()->withErrors([
                 'message' => 'Wrong login intake'
             ]);

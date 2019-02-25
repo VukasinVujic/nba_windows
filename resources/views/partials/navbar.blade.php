@@ -1,6 +1,33 @@
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Blog</h5>
-        <nav class="my-2 my-md-0 mr-md-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost/VIVIFY/napredni/Laravel/radOdKuce_19_02/nba/public/">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">Login</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('register') }}">register</a>
+            </li>
+  
+
+        
+      </ul>
+    </div>
+  </nav>
+
+
           
         </nav>
         @if(auth()->check())
@@ -11,3 +38,6 @@
         {{-- <a class="btn btn-outline-primary" href="{{route('show-register')}}">Sign up</a> --}}
         @endif
       </div>
+
+
+     

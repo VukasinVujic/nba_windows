@@ -13,16 +13,11 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 // Route::resource('/Teams/', 'TeamController');
 // Route::resource('/Players/', 'PlayerController');
 
-Route::get('Teams/{id}', 'TeamController@show')->name('showTeam');
-Route::get('Teams/', 'TeamController@index')->name('allTeams');
-
-Route::get('Players/{id}', 'PlayerController@show');
-Route::get('Players', 'PlayerController@index');
 
 
 Route::get('/logout', 'LoginController@logout')->name('logout');
@@ -44,3 +39,17 @@ Route::group(['middleware'=>['guest']] , function(){
     Route::get('/login', 'LoginController@create')->name('show-login');
     Route::post('/login', 'LoginController@store')->name('login');
 });
+
+
+Route::group(['middleware' => ['auth']] , function (){
+
+Route::get('Teams/{id}', 'TeamController@show')->name('showTeam');
+Route::get('Teams/', 'TeamController@index')->name('allTeams');
+
+Route::get('Players/{id}', 'PlayerController@show');
+Route::get('Players', 'PlayerController@index');
+
+});
+
+
+
