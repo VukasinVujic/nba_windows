@@ -53,6 +53,8 @@ Route::get('Players', 'PlayerController@index');
 });
 
 Route::get('/logout', 'LoginController@logout')->name('logout');
+Route::get('/news/{id}', 'NewsController@show')->name('show-news');
+Route::get('/news', 'NewsController@index')->name('allNews');
 
 
             

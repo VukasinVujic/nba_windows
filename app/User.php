@@ -13,6 +13,10 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
+    public function news(){
+        return $this->hasMany(News_team::class);
+    }
+
 
     use Notifiable;
 

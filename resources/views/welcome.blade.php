@@ -87,7 +87,7 @@
                 <div class="links">
                         <a href="http://localhost/VIVIFY/napredni/Laravel/radOdKuce_19_02/nba/public/Teams">All teams</a>
                         <a href="http://localhost/VIVIFY/napredni/Laravel/radOdKuce_19_02/nba/public/Players">All players</a>
-                        <a href="http://localhost/VIVIFY/napredni/Laravel/radOdKuce_19_02/nba/public/register">Register</a>
+                        <a href="http://localhost/VIVIFY/napredni/Laravel/radOdKuce_19_02/nba/public/news">All NEWS</a>
 
                     </div>
             </div>

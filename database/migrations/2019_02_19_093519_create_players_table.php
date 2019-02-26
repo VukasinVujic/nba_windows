@@ -30,6 +30,22 @@ class CreatePlayersTable extends Migration
         });
     }
 
+    // Schema::create('news_teams', function (Blueprint $table) {
+    //     $table->increments('id');
+    //     $table->integer('user_id')->unsigned();    
+       
+    //     $table->foreign('user_id')
+    //         ->refersences('id')
+    //         ->on('users')
+    //         ->onDelete('cascade');
+       
+    //     $table->string('title');
+    //     $table->string('content');
+
+    //     $table->timestamps();
+    // });
+
+
     /**
      * Reverse the migrations.
      *

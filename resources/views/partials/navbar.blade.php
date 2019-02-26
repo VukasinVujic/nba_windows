@@ -22,6 +22,10 @@
             </li>
   
 
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('allNews') }}">news</a>
+            </li>
+  
         
       </ul>
     </div>
