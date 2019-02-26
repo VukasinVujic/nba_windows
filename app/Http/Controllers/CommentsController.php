@@ -8,8 +8,15 @@ use App\Player;
 use App\Team;
 use Illuminate\Support\Facades\Auth;
 
+
 class CommentsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('forbidden-comment')->only('store');
+    }
+
     public function store(Request $request,$team_id)
     {
         $request->validate([
@@ -17,13 +24,13 @@ class CommentsController extends Controller
         ]);
 
     $team = Team::find($team_id);
-
+        
 
     Comment::create([
         'content'=>$request->get('content'),
         'team_id'=>$team->id,
         'user_id'=>Auth::User()->id
-    ]);
+       ]);
 
     return redirect()->route('showTeam',['id' => $team_id]);
     }

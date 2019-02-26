@@ -20,9 +20,8 @@ Route::get('/', function () {
 
 Route::get('/verification/{id}' , 'LoginController@verification')->name('verification');
 
+Route::post('Players/{id}', 'CommentsController@store')->name('creat-comment');
 
-
-Route::get('/logout', 'LoginController@logout')->name('logout');
 
 
 // Route::group(['middleware' => ['guest']], function (){
@@ -52,5 +51,8 @@ Route::get('Players/{id}', 'PlayerController@show');
 Route::get('Players', 'PlayerController@index');
 
 });
+
+Route::get('/logout', 'LoginController@logout')->name('logout');
+
 
             

@@ -34,6 +34,31 @@
 <hr>
     
 @endforeach
+
+
+<div class="container"> 
+
+    <form method="POST" action="{{ route('creat-comment' , [ 'id' => $team->id]) }}">
+        @csrf
+        <div class="form-group row">
+            <textarea name="content" cols="40" rows="5"
+            class="form-control{{ $errors->has('content') ? 'is_invalid' : '' }}">
+            </textarea>
+            @include("partials.invalid-feedback", ['field' => 'content'])
+        </div>
+    </div>
+
+        <div class="form-group row">
+            <div class="offset-4 col-8">
+                <button type="submit" class="btn btn-primary">Add comment</button>
+            </div>
+        </div>
+    
+    
+    </form>
+
+
+</div>
     
 
 @endsection
