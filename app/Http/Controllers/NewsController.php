@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\News_team;
 use App\User;
+
 class NewsController extends Controller
 {
     public function index()
