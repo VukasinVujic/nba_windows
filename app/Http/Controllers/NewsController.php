@@ -9,8 +9,10 @@ class NewsController extends Controller
 {
     public function index()
     {
-    $news = News_team::all();
-        return view('news-folder.newsIndex', compact('news'));
+    // $news = News_team::all();
+    // return view('news-folder.newsIndex', compact('news'));
+    $news = News_team::orderBy('created_at', 'desc')->paginate(5);
+    return view('news-folder.newsIndex' , ['news' => $news]);
     }
 
     public function show($id)

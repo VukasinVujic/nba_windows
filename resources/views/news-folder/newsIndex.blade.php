@@ -11,7 +11,9 @@
        <h3><a href="{{ route('show-news' , ['id' => $new->id])}}"> {{ $new->title }} </a> </h3> 
     
 @endforeach
-    
+
+{{ $news->links() }}
+
 @endsection
 
 
